@@ -1,68 +1,202 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project 2 Proposal
 
-## Available Scripts
+## Comic Geek App
 
-In the project directory, you can run:
+### Project Description
 
-### `npm start`
+My app, Comic Geek, is an app that provides information about Marvel and DC comic characters. Being around a lot of friends and family that are big fans of Marvel and DC I decided to create an app where they can find information or facts about different comic characters at their fingertips. In the future I would like to add a feature where the user can find information about all of the Marvel and DC characters with no limit.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Wire Frames
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Home Page View**
 
-### `npm test`
+![image](https://i.imgur.com/uKteuKL.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Marvel Comics View**
 
-### `npm run build`
+![image](https://i.imgur.com/UmiIJwj.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**DC Comics View**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![image](https://i.imgur.com/P9ppeYT.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Individual Character Info View**
 
-### `npm run eject`
+![image](https://i.imgur.com/DUE9wpw.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### MVP Goals
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- As a user, I want to be able to navigate to different pages for marvel and DC characters respectively so I don't get the characters mixed up.
+- As a user, I want to be able to search for a specific character on among the ones available on the app so I don't have to go through the whole list of characters every time.
+- As a user I want to be able to click on a character and find more details about that comic character so I can get more information about that character.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Stretch Goals
+- As a user I want to be able to search for villains and superheroes respectively incase I forget what role each character played.
+- As a user I want to be able to find characters of other Comic publishers so I am not limited to only Marvel and DC.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### API
 
-## Learn More
+**Superhero API Response**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```json
+{
+  "response": "success",
+  "results-for": "batman",
+  "results": [
+    {
+      "id": "69",
+      "name": "Batman",
+      "powerstats": {
+        "intelligence": "81",
+        "strength": "40",
+        "speed": "29",
+        "durability": "55",
+        "power": "63",
+        "combat": "90"
+      },
+      "biography": {
+        "full-name": "Terry McGinnis",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "Batman II",
+          "The Tomorrow Knight",
+          "The second Dark Knight",
+          "The Dark Knight of Tomorrow",
+          "Batman Beyond"
+        ],
+        "place-of-birth": "Gotham City, 25th Century",
+        "first-appearance": "Batman Beyond #1",
+        "publisher": "DC Comics",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "Human",
+        "height": [
+          "5'10",
+          "178 cm"
+        ],
+        "weight": [
+          "170 lb",
+          "77 kg"
+        ],
+        "eye-color": "Blue",
+        "hair-color": "Black"
+      },
+      "work": {
+        "occupation": "-",
+        "base": "21st Century Gotham City"
+      },
+      "connections": {
+        "group-affiliation": "Batman Family, Justice League Unlimited",
+        "relatives": "Bruce Wayne (biological father), Warren McGinnis (father, deceased), Mary McGinnis (mother), Matt McGinnis (brother)"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/10441.jpg"
+      }
+    },
+    {
+      "id": "70",
+      "name": "Batman",
+      "powerstats": {
+        "intelligence": "100",
+        "strength": "26",
+        "speed": "27",
+        "durability": "50",
+        "power": "47",
+        "combat": "100"
+      },
+      "biography": {
+        "full-name": "Bruce Wayne",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "Insider",
+          "Matches Malone"
+        ],
+        "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+        "first-appearance": "Detective Comics #27",
+        "publisher": "DC Comics",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "Human",
+        "height": [
+          "6'2",
+          "188 cm"
+        ],
+        "weight": [
+          "210 lb",
+          "95 kg"
+        ],
+        "eye-color": "blue",
+        "hair-color": "black"
+      },
+      "work": {
+        "occupation": "Businessman",
+        "base": "Batcave, Stately Wayne Manor, Gotham City; Hall of Justice, Justice League Watchtower"
+      },
+      "connections": {
+        "group-affiliation": "Batman Family, Batman Incorporated, Justice League, Outsiders, Wayne Enterprises, Club of Heroes, formerly White Lantern Corps, Sinestro Corps",
+        "relatives": "Damian Wayne (son), Dick Grayson (adopted son), Tim Drake (adopted son), Jason Todd (adopted son), Cassandra Cain (adopted ward)\nMartha Wayne (mother, deceased), Thomas Wayne (father, deceased), Alfred Pennyworth (former guardian), Roderick Kane (grandfather, deceased), Elizabeth Kane (grandmother, deceased), Nathan Kane (uncle, deceased), Simon Hurt (ancestor), Wayne Family"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/639.jpg"
+      }
+    },
+    {
+      "id": "71",
+      "name": "Batman II",
+      "powerstats": {
+        "intelligence": "88",
+        "strength": "11",
+        "speed": "33",
+        "durability": "28",
+        "power": "36",
+        "combat": "100"
+      },
+      "biography": {
+        "full-name": "Dick Grayson",
+        "alter-egos": "Nightwing, Robin",
+        "aliases": [
+          "Dick Grayson"
+        ],
+        "place-of-birth": "-",
+        "first-appearance": "-",
+        "publisher": "Nightwing",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "Human",
+        "height": [
+          "5'10",
+          "178 cm"
+        ],
+        "weight": [
+          "175 lb",
+          "79 kg"
+        ],
+        "eye-color": "Blue",
+        "hair-color": "Black"
+      },
+      "work": {
+        "occupation": "-",
+        "base": "Gotham City; formerly Bludhaven, New York City"
+      },
+      "connections": {
+        "group-affiliation": "Justice League Of America, Batman Family",
+        "relatives": "John Grayson (father, deceased), Mary Grayson (mother, deceased), Bruce Wayne / Batman (adoptive father), Damian Wayne / Robin (foster brother), Jason Todd / Red Hood (adoptive brother), Tim Drake / Red Robin (adoptive brother), Cassandra Cain / Batgirl IV (adoptive sister)"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/1496.jpg"
+      }
+    }
+  ]
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+### Component Hierarchy
+![image](https://i.imgur.com/RoORzkH.png)
