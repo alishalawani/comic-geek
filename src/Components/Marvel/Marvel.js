@@ -3,7 +3,7 @@ import './Marvel.css';
 import marvelNames from './marvelNames'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
-import dcNames from '../DC/dcNames';
+
 
 const apiKey = process.env.REACT_APP_MYAPI_KEY;
 let names = [];
@@ -24,24 +24,6 @@ class Marvel extends Component {
                 
             }).catch((err)=>{console.log("Handled error: "+err)})
         })
-//DC FETCH
-        dcNames.map((name) => {
-					axios(url + name)
-						.then((res) => {
-							return res.data.results[0];
-						})
-						.then((res) => {
-							console.log(res);
-							//to make sure that the results don't double
-							if (!names.includes(res.name)) {
-								names.push(res.name);
-								this.props.setMarvelData(res);
-							}
-						})
-						.catch((err) => {
-							console.log('Handled error: ' + err);
-						});
-				});
     
     }
     render() {
