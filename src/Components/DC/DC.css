@@ -1,0 +1,14 @@
+.dc-character {
+	width: 250px;
+	height: 350px;
+	background-color: red;
+	margin: 20px;
+}
+.dc-char {
+    width: 250px;
+	height: 300px;
+}
+.dc-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './Marvel.css';
 import marvelNames from './marvelNames'
+import {Link} from 'react-router-dom'
 import axios from 'axios';
 
 
 const apiKey = process.env.REACT_APP_MYAPI_KEY;
-
+let names = [];
 class Marvel extends Component {
 
 
@@ -14,18 +15,31 @@ class Marvel extends Component {
         marvelNames.map((name)=>{
             axios(url+name).then((res)=>{return res.data.results[0]}).then((res)=>{
                 console.log(res)
-                this.props.setMarvelData(res);
+                //to make sure that the results don't double
+                if(!names.includes(res.name)){
+                    names.push(res.name);
+                    this.props.setMarvelData(res);
+                }
+                
+                
             }).catch((err)=>{console.log(err)})
         })
     
     }
     render() {
-        let characters = this.props.characters.map((character)=>{
+        let characters = this.props.characters.map((character, index)=>{
             return (
-							<div key={character.id} className='character'>
-								<img src={character.image.url} alt={character.name} className='marvel-char'/>
-								<h3>{character.name}</h3>
-							</div>
+							<Link to={`/marvel-characters/:${character.name}`} key={index}>
+								{' '}
+								<div className='character'>
+									<img
+										src={character.image.url}
+										alt={character.name}
+										className='marvel-char'
+									/>
+									<h3>{character.name}</h3>
+								</div>
+							</Link>
 						);
         })
 
