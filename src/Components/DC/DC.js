@@ -3,9 +3,13 @@ import dcNames from './dcNames';
 import {Link} from 'react-router-dom'
 import './DC.css'
 import axios from 'axios'
+
+
 const apiKey = process.env.REACT_APP_MYAPI_KEY;
 let names = [];
 class DC extends Component {
+
+    
 	componentDidMount() {
 		const url = `https://www.superheroapi.com/api.php/${apiKey}/search/`;
 		dcNames.map((name) => {
@@ -22,7 +26,7 @@ class DC extends Component {
 					}
 				})
 				.catch((err) => {
-					console.log(err);
+					console.log("Handled error: " + err);
 				});
 		});
 	}
@@ -30,7 +34,7 @@ class DC extends Component {
 		let characters = this.props.characters.map((character, index) => {
 			return (
 				<Link to={`/dc-characters/:${character.name}`} key={index}>
-					{' '}
+
 					<div className='dc-character'>
 						<img
 							src={character.image.url}

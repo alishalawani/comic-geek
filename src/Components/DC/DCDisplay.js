@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './DCDisplay.css'
+import './DCDisplay.css';
 class DCDisplay extends Component {
 	render() {
 		let characterInfo;

@@ -4,7 +4,7 @@ import Marvel from '../Marvel/Marvel';
 import DC from '../DC/DC'
 import Home from '../Home/Home';
 import MarvelDisplay from '../Marvel/MarvelDisplay'
-import DCDisplay from '../DC/DC'
+import DCDisplay from '../DC/DCDisplay'
 import { Route, Link } from 'react-router-dom';
 
 class App extends Component {
@@ -25,8 +25,10 @@ class App extends Component {
 		this.setState({
 			dcCharacters: [...this.state.dcCharacters, character],
 		});
-	};
+  };
+  
 	render() {
+    
 		return (
 			<div>
 				<header className='header'>

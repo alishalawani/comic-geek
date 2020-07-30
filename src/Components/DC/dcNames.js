@@ -1,3 +1,3 @@
-const dcNames = ["Wonder Woman", "Joker", "Flash","Aquaman", "Antiope", "Atom", "Batwoman", "Black Adam", "Black Canary", "Black Lightning", "Batman", "Batgirl", "Black Manta", "Black Mask", "Donna Troy", "Shazam", "Green Arrow", "Barbara Gordon", "Cat Woman"]
+const dcNames = ["Wonder Woman", "Joker","Aquaman", "Atom", "Batwoman", "Black Adam", "Black Canary", "Black Lightning", "Batman", "Batgirl", "Black Manta", "Donna Troy", "Green Arrow"]
 
 export default dcNames;
