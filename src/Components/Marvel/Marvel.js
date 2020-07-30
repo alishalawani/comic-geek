@@ -20,9 +20,18 @@ class Marvel extends Component {
     
     }
     render() {
+        let characters = this.props.characters.map((character)=>{
+            return (
+							<div key={character.id} className='character'>
+								<img src={character.image.url} alt={character.name} className='marvel-char'/>
+								<h3>{character.name}</h3>
+							</div>
+						);
+        })
+
         return (
-            <div>
-                
+            <div className='container'>
+                {characters}
             </div>
         );
     }
