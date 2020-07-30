@@ -4,8 +4,8 @@ import './Home.css'
 
 function Header(props) {
     return (
-			<div >
-				
+			<div>
+				<img src='https://studybreaks.com/wp-content/uploads/2016/09/dc-vs-marvel.jpg' alt='Marvel and DC'/>
 			</div>
 		);
 }

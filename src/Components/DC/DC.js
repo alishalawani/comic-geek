@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import dcNames from './dcNames';
 import {Link} from 'react-router-dom'
 import './DC.css'
+import Search from '../Search/Search'
 import axios from 'axios'
 
 
@@ -47,7 +48,13 @@ class DC extends Component {
 			);
 		});
 
-		return <div className='dc-container'>{characters}</div>;
+		return (
+			<div>
+				<Search characters={this.props.characters} />
+				<h1>DC Comics</h1>
+				<div className='dc-container'>{characters}</div>
+			</div>
+		);
 	}
 }
 export default DC;

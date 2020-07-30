@@ -5,6 +5,7 @@ import DC from '../DC/DC'
 import Home from '../Home/Home';
 import MarvelDisplay from '../Marvel/MarvelDisplay'
 import DCDisplay from '../DC/DCDisplay'
+import Search from '../Search/Search'
 import { Route, Link } from 'react-router-dom';
 
 class App extends Component {
@@ -12,18 +13,20 @@ class App extends Component {
 		super(props);
 		this.state = {
 			marvelCharacters: [],
-			dcCharacters: [],
+      dcCharacters: [],
+      allCharacters: []
 		};
 	}
 
 	setMarvelData = (character) => {
 		this.setState({
-			marvelCharacters: [...this.state.marvelCharacters, character],
+			marvelCharacters: [...this.state.marvelCharacters, character]
 		});
 	};
 	setDCData = (character) => {
 		this.setState({
 			dcCharacters: [...this.state.dcCharacters, character],
+		
 		});
   };
   
@@ -38,7 +41,8 @@ class App extends Component {
 					<Link to='/dc-comics'>DC Comics</Link>
 					<Link to='/about'>About</Link>
 				</header>
-
+        
+<Route path='/' exact component={Home}/>
 				<Route
 					path='/marvel-comics'
 					render={() => {

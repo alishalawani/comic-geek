@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Marvel.css';
 import marvelNames from './marvelNames'
+import Search from '../Search/Search'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 
@@ -44,10 +45,12 @@ class Marvel extends Component {
         })
 
         return (
-            <div className='container'>
-                {characters}
-            </div>
-        );
+					<div>
+						<Search characters={this.props.characters} />
+						<h1>Marvel Comics</h1>
+						<div className='container'>{characters}</div>
+					</div>
+				);
     }
 }
 
