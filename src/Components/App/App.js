@@ -74,7 +74,7 @@ class App extends Component {
 					path='/dc-characters/:name'
 					render={(routerProps) => {
 						return (
-							<dcDisplay
+							<DCDisplay
 								match={routerProps.match}
 								characters={this.state.dcCharacters}
 							/>
