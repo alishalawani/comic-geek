@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
+import CardColumns from 'react-bootstrap/CardColumns'
+import SearchDisplay from './SearchDisplay'
 let found = false
 class Search extends Component {
 	constructor(props) {
@@ -33,6 +33,7 @@ class Search extends Component {
 						this.state.search.toLowerCase().charAt(0)
 				) {
                     found = true
+                    
 				}
 				return (
 					character.name
@@ -47,29 +48,12 @@ class Search extends Component {
 			characterDisplay = filteredCharacters.map((character, index) => {
 				if (character.biography.publisher === 'DC Comics') {
 					return (
-						<Link to={`/dc-characters/:${character.name}`} key={index}>
-							<div className='dc-character'>
-								<img
-									src={character.image.url}
-									alt={character.name}
-									className='dc-char'
-								/>
-								<h3>{character.name}</h3>
-							</div>
-						</Link>
+						<SearchDisplay link={`/dc-characters/:${character.name}`} character={character}key={index}/>
+						
 					);
 				} else if (character.biography.publisher === 'Marvel Comics') {
 					return (
-						<Link to={`/marvel-characters/:${character.name}`} key={index}>
-							<div className='dc-character'>
-								<img
-									src={character.image.url}
-									alt={character.name}
-									className='dc-char'
-								/>
-								<h3>{character.name}</h3>
-							</div>
-						</Link>
+						<SearchDisplay link={`/marvel-characters/:${character.name}`} character={character} key={index}/>
 					);
 				}
 			});
@@ -87,8 +71,14 @@ class Search extends Component {
 					<button type='submit'>Search</button>
 				</form>
 				{this.state.submitted && <h2>Your Search result:</h2>}
-                {((found === false) && (this.state.submitted)) && <h3 className='search-error'>Sorry, the character you are searched for isn't available, check if you typed the name correctly or try searching for a different character </h3>}
-				{characterDisplay}
+				{found === false && this.state.submitted && (
+					<h3 className='search-error'>
+						Sorry, the character you are searched for isn't available, check if
+						you typed the name correctly or try searching for a different
+						character{' '}
+					</h3>
+				)}
+				<CardColumns>{characterDisplay}</CardColumns>
 			</div>
 		);
 	}

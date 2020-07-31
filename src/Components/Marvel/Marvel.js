@@ -48,7 +48,7 @@ event.preventDefault();
 									<Card.Text>{character.name} </Card.Text>
 									
 										<Link to={`/marvel-characters/:${character.name}`}>
-											<div className='know-more'>Know More</div>
+											<div className='marvel-know-more'>Know More</div>
 										</Link>
 									
 								</Card.Body>
