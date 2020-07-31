@@ -89,7 +89,7 @@ class Search extends Component {
 					<button type='submit'>Search</button>
 				</form>
 				{this.state.submitted && <h2>Your Search result:</h2>}
-                {(!found && this.state.submitted) && <h3 className='search-error'>Sorry, the character you are searched for isn't available, check if you typed the name correctly or try searching for a different character </h3>}
+                {((found === false) && this.state.submitted) && <h3 className='search-error'>Sorry, the character you are searched for isn't available, check if you typed the name correctly or try searching for a different character </h3>}
 				{characterDisplay}
 			</div>
 		);
