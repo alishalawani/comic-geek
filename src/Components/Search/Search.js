@@ -19,7 +19,7 @@ class Search extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-        this.setState({search: '', submitted: true });
+        this.setState({ submitted: true });
         
 	};
 
@@ -71,11 +71,14 @@ class Search extends Component {
 					<Row>
 						<Col>
                         <Form.Group>
-							<Form.Control size='sm' placeholder='Search by character name' type='text' name='searchString' required onChange={this.handleInputChange} value={this.state.search}/>
+							<Form.Control size='sm' placeholder='Search by character name' type='text' name='searchString' onChange={this.handleInputChange} value={this.state.search}/>
 						
 							</Form.Group>
+                            <Form.Text className='text-muted'>
+                                Search by any character name in this group
+                            </Form.Text>
 						</Col>
-                        <Col>
+                        <Col md='auto'>
                         <Button type='submit' variant='dark' className='btn-sm'>
                             Search
                         </Button>
