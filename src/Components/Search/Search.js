@@ -79,14 +79,14 @@ class Search extends Component {
                             </Form.Text>
 						</Col>
                         <Col md='auto'>
-                        <Button type='submit' variant='dark' className='btn-sm'>
+                        <Button type='submit' variant='dark' className='btn-sm btn'>
                             Search
                         </Button>
                         </Col>
 					</Row>
 				</Form>
-				{filteredCharacters && <h2>Your Search result:</h2>}
-				{found === false && this.state.submitted && (
+				{this.state.search && <h2>Your Search result:</h2>}
+				{(found === false && this.state.submitted && this.state.search)&& (
 					<h3 className='search-error'>
 						Sorry, the character you are searched for isn't available, check if
 						you typed the name correctly or try searching for a different

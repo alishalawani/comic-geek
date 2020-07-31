@@ -11,3 +11,7 @@
 	color: white;
 	font-weight: bold;
 }
+.hr {
+	color: #ff0d40;
+	border: 0.5px solid #ff0d40;
+}

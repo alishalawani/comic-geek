@@ -58,6 +58,7 @@ class DC extends Component {
 		return (
 			<Container>
 				<Search characters={this.props.characters} />
+                <hr className='hr'/>
 				<h1>DC Comics</h1>
 				<CardColumns>{characters}</CardColumns>
 			</Container>

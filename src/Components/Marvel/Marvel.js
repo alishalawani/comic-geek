@@ -59,6 +59,7 @@ event.preventDefault();
         return (
 					<Container>
 						<Search characters={this.props.characters} />
+                        <hr className='hr'/>
 						<h1>Marvel Comics</h1>
 						<CardColumns >{characters}</CardColumns>
 					</Container>
