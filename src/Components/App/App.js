@@ -5,8 +5,10 @@ import DC from '../DC/DC'
 import Home from '../Home/Home';
 import MarvelDisplay from '../Marvel/MarvelDisplay'
 import DCDisplay from '../DC/DCDisplay'
+import Header from '../Header/Header'
 import Search from '../Search/Search'
 import { Route, Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
 
 class App extends Component {
 	constructor(props) {
@@ -33,16 +35,10 @@ class App extends Component {
 	render() {
     
 		return (
-			<div>
-				<header className='header'>
-					<img src='' alt='Logo' />
-					<Link to='/'>Home</Link>
-					<Link to='/marvel-comics'>Marvel Comics</Link>
-					<Link to='/dc-comics'>DC Comics</Link>
-					<Link to='/about'>About</Link>
-				</header>
-        
-<Route path='/' exact component={Home}/>
+			<Container>
+				<Header/>
+
+				<Route path='/' exact component={Home} />
 				<Route
 					path='/marvel-comics'
 					render={() => {
@@ -87,7 +83,7 @@ class App extends Component {
 						);
 					}}
 				/>
-			</div>
+			</Container>
 		);
 	}
 }

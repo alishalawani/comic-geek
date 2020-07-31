@@ -48,7 +48,7 @@ class Marvel extends Component {
 					<div>
 						<Search characters={this.props.characters} />
 						<h1>Marvel Comics</h1>
-						<div className='container'>{characters}</div>
+						<div className='marvel-container'>{characters}</div>
 					</div>
 				);
     }
