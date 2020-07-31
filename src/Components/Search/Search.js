@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CardColumns from 'react-bootstrap/CardColumns'
 import SearchDisplay from './SearchDisplay'
+import { Form, Row, Col, Button } from 'react-bootstrap';
+import './Search.css'
 let found = false
 class Search extends Component {
 	constructor(props) {
@@ -17,13 +19,15 @@ class Search extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		this.setState({ submitted: true });
+        this.setState({search: '', submitted: true });
+        
 	};
 
 	render() {
-		let characterDisplay;
+        let characterDisplay;
+        let filteredCharacters 
 		if (this.state.submitted === true) {
-			let filteredCharacters = this.props.characters.filter((character) => {
+			filteredCharacters = this.props.characters.filter((character) => {
 				if (
 					character.name
 						.toLowerCase()
@@ -34,7 +38,9 @@ class Search extends Component {
 				) {
                     found = true
                     
-				}
+				}else{
+                    
+                }
 				return (
 					character.name
 						.toLowerCase()
@@ -61,16 +67,22 @@ class Search extends Component {
 
 		return (
 			<div>
-				<form onSubmit={this.handleSubmit}>
-					<label>Search Our Collection: </label>
-					<input
-						type='text'
-						id='search'
-						value={this.state.search}
-						onChange={this.handleInputChange}></input>
-					<button type='submit'>Search</button>
-				</form>
-				{this.state.submitted && <h2>Your Search result:</h2>}
+				<Form onSubmit={this.handleSubmit}>
+					<Row>
+						<Col>
+                        <Form.Group>
+							<Form.Control size='sm' placeholder='Search by character name' type='text' name='searchString' required onChange={this.handleInputChange} value={this.state.search}/>
+						
+							</Form.Group>
+						</Col>
+                        <Col>
+                        <Button type='submit' variant='dark' className='btn-sm'>
+                            Search
+                        </Button>
+                        </Col>
+					</Row>
+				</Form>
+				{filteredCharacters && <h2>Your Search result:</h2>}
 				{found === false && this.state.submitted && (
 					<h3 className='search-error'>
 						Sorry, the character you are searched for isn't available, check if
