@@ -7,7 +7,7 @@ import MarvelDisplay from '../Marvel/MarvelDisplay'
 import DCDisplay from '../DC/DCDisplay'
 import Header from '../Header/Header'
 import Search from '../Search/Search'
-import { Route, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 
 class App extends Component {
@@ -36,53 +36,56 @@ class App extends Component {
     
 		return (
 			<Container>
-				<Header/>
-
-				<Route path='/' exact component={Home} />
-				<Route
-					path='/marvel-comics'
-					render={() => {
-						return (
-							<Marvel
-								setMarvelData={this.setMarvelData}
-								characters={this.state.marvelCharacters}
-							/>
-						);
-					}}
-				/>
-				<Route
-					path='/marvel-characters/:name'
-					render={(routerProps) => {
-						return (
-							<MarvelDisplay
-								match={routerProps.match}
-								characters={this.state.marvelCharacters}
-							/>
-						);
-					}}
-				/>
-				<Route
-					path='/dc-comics'
-					render={() => {
-						return (
-							<DC
-								setDCData={this.setDCData}
-								characters={this.state.dcCharacters}
-							/>
-						);
-					}}
-				/>
-				<Route
-					path='/dc-characters/:name'
-					render={(routerProps) => {
-						return (
-							<DCDisplay
-								match={routerProps.match}
-								characters={this.state.dcCharacters}
-							/>
-						);
-					}}
-				/>
+				<Header />
+				<main>
+					<Switch>
+						<Route path='/' exact component={Home} />
+						<Route
+							path='/marvel-comics'
+							render={() => {
+								return (
+									<Marvel
+										setMarvelData={this.setMarvelData}
+										characters={this.state.marvelCharacters}
+									/>
+								);
+							}}
+						/>
+						<Route
+							path='/marvel-characters/:name'
+							render={(routerProps) => {
+								return (
+									<MarvelDisplay
+										match={routerProps.match}
+										characters={this.state.marvelCharacters}
+									/>
+								);
+							}}
+						/>
+						<Route
+							path='/dc-comics'
+							render={() => {
+								return (
+									<DC
+										setDCData={this.setDCData}
+										characters={this.state.dcCharacters}
+									/>
+								);
+							}}
+						/>
+						<Route
+							path='/dc-characters/:name'
+							render={(routerProps) => {
+								return (
+									<DCDisplay
+										match={routerProps.match}
+										characters={this.state.dcCharacters}
+									/>
+								);
+							}}
+						/>
+					</Switch>
+				</main>
 			</Container>
 		);
 	}

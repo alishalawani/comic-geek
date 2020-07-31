@@ -3,6 +3,9 @@ import dcNames from './dcNames';
 import {Link} from 'react-router-dom'
 import './DC.css'
 import Search from '../Search/Search'
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
+import CardColumns from 'react-bootstrap/CardColumns';
 import axios from 'axios'
 
 
@@ -34,26 +37,30 @@ class DC extends Component {
 	render() {
 		let characters = this.props.characters.map((character, index) => {
 			return (
-				<Link to={`/dc-characters/:${character.name}`} key={index}>
+				<Card className='character' key={index}>
+					<Card.Img
+						variant='top'
+						src={character.image.url}
+						alt={character.name}
+						className='dc-char'
+					/>
+					<Card.Body>
+						<Card.Text>{character.name} </Card.Text>
 
-					<div className='dc-character'>
-						<img
-							src={character.image.url}
-							alt={character.name}
-							className='dc-char'
-						/>
-						<h3>{character.name}</h3>
-					</div>
-				</Link>
+						<Link to={`/dc-characters/:${character.name}`}>
+							<div className='know-more'>Know More</div>
+						</Link>
+					</Card.Body>
+				</Card>
 			);
 		});
 
 		return (
-			<div>
+			<Container>
 				<Search characters={this.props.characters} />
 				<h1>DC Comics</h1>
-				<div className='dc-container'>{characters}</div>
-			</div>
+				<CardColumns>{characters}</CardColumns>
+			</Container>
 		);
 	}
 }

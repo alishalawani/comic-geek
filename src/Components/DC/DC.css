@@ -1,14 +1,13 @@
-.dc-character {
+.marvel-char {
 	width: 250px;
 	height: 350px;
-	background-color: red;
-	margin: 20px;
 }
-.dc-char {
-    width: 250px;
-	height: 300px;
-}
-.dc-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+.know-more {
+	background-color: #ff0d40;
+	padding: 5px;
+	width: 100px;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
 }

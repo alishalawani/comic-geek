@@ -4,6 +4,9 @@ import marvelNames from './marvelNames'
 import Search from '../Search/Search'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
+import Container from 'react-bootstrap/Container'
+import Card from 'react-bootstrap/Card';
+import CardColumns from 'react-bootstrap/CardColumns'
 
 
 const apiKey = process.env.REACT_APP_MYAPI_KEY;
@@ -27,29 +30,38 @@ class Marvel extends Component {
         })
     
     }
+
+    handleButtonEvent = (event) =>{
+event.preventDefault();
+    }
     render() {
         let characters = this.props.characters.map((character, index)=>{
             return (
-							<Link to={`/marvel-characters/:${character.name}`} key={index}>
-								{' '}
-								<div className='character'>
-									<img
-										src={character.image.url}
-										alt={character.name}
-										className='marvel-char'
-									/>
-									<h3>{character.name}</h3>
-								</div>
-							</Link>
+							<Card className='character' key={index}>
+								<Card.Img
+                                variant='top'
+									src={character.image.url}
+									alt={character.name}
+									className='marvel-char'
+								/>
+								<Card.Body>
+									<Card.Text>{character.name} </Card.Text>
+									
+										<Link to={`/marvel-characters/:${character.name}`}>
+											<div className='know-more'>Know More</div>
+										</Link>
+									
+								</Card.Body>
+							</Card>
 						);
         })
 
         return (
-					<div>
+					<Container>
 						<Search characters={this.props.characters} />
 						<h1>Marvel Comics</h1>
-						<div className='marvel-container'>{characters}</div>
-					</div>
+						<CardColumns >{characters}</CardColumns>
+					</Container>
 				);
     }
 }
