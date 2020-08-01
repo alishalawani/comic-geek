@@ -52,16 +52,8 @@ class Search extends Component {
 			});
 
 			characterDisplay = filteredCharacters.map((character, index) => {
-				if (character.biography.publisher === 'DC Comics') {
-					return (
-						<SearchDisplay link={`/dc-characters/:${character.name}`} character={character}key={index}/>
-						
-					);
-				} else if (character.biography.publisher === 'Marvel Comics') {
-					return (
-						<SearchDisplay link={`/marvel-characters/:${character.name}`} character={character} key={index}/>
-					);
-				}
+				
+				return  (character.biography.publisher === 'DC Comics') ? <SearchDisplay link={`/dc-characters/:${character.name}`} character={character}key={index}/> : <SearchDisplay link={`/marvel-characters/:${character.name}`} character={character} key={index}/>;
 			});
 		}
 
