@@ -67,7 +67,7 @@ class Search extends Component {
 						
 							</Form.Group>
                             <Form.Text className='text-muted'>
-                                Search by any character name in this group
+                                Search by character name or first letter of character in this group
                             </Form.Text>
 						</Col>
                         <Col md='auto'>
@@ -77,8 +77,8 @@ class Search extends Component {
                         </Col>
 					</Row>
 				</Form>
-				{this.state.search && <h2>Your Search result:</h2>}
-				{(found === false && this.state.submitted && this.state.search)&& (
+				{(this.state.search && this.state.submitted) && <h2>Your Search result:</h2>}
+				{((found === false) && this.state.submitted && this.state.search)&& (
 					<h3 className='search-error'>
 						Sorry, the character you are searched for isn't available, check if
 						you typed the name correctly or try searching for a different

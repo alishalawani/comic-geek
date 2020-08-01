@@ -8,6 +8,7 @@ import DCDisplay from '../DC/DCDisplay'
 import Header from '../Header/Header'
 import { Route, Switch } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
+import About from '../About/About'
 
 class App extends Component {
 	constructor(props) {
@@ -83,6 +84,7 @@ class App extends Component {
 								);
 							}}
 						/>
+						<Route path='/about' component={About}/>
 					</Switch>
 				</main>
 			</Container>
