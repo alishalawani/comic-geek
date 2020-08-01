@@ -16,7 +16,7 @@ class Marvel extends Component {
 
     componentDidMount(){
         const url = `https://www.superheroapi.com/api.php/${apiKey}/search/`;
-        marvelNames.map((name)=>{
+        marvelNames.forEach((name)=>{
             axios(url+name).then((res)=>{return res.data.results[0]}).then((res)=>{
                 // console.log(res)
                 //to make sure that the results don't double

@@ -16,7 +16,7 @@ class DC extends Component {
     
 	componentDidMount() {
 		const url = `https://www.superheroapi.com/api.php/${apiKey}/search/`;
-		dcNames.map((name) => {
+		dcNames.forEach((name) => {
 			axios(url + name)
 				.then((res) => {
 					return res.data.results[0];

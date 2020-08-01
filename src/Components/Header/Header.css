@@ -1,13 +1,19 @@
-.header{
-    display: flex;
-    justify-content: space-between;
-    padding: 40px;
-    margin-bottom: 30px;
+@import url('https://fonts.googleapis.com/css2?family=Risque&display=swap');
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px;
+	margin-bottom: 30px;
 }
 
-.color-nav{
-    background-color: white;
-    margin-bottom: 50px;
-    font-weight: bold;
-     ;
+.color-nav {
+	background-color: white;
+	margin-bottom: 50px;
+	font-weight: bold;
+}
+
+.logo {
+	font-family: 'Risque', cursive;
+	color: #ff0d40;
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
 import './Header.css'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav';
@@ -12,8 +11,8 @@ function Header(props) {
 				variant='light'
 				expand='md'>
 				<LinkContainer to='/'>
-					{/* <link rel='icon' href='/image/favicon.ico' /> */}
-					<Navbar.Brand>Comic Geek</Navbar.Brand>
+					
+					<Navbar.Brand ><h1 className='logo'>Comic Geek</h1></Navbar.Brand>
 				</LinkContainer>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>

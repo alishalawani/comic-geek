@@ -6,7 +6,6 @@ import Home from '../Home/Home';
 import MarvelDisplay from '../Marvel/MarvelDisplay'
 import DCDisplay from '../DC/DCDisplay'
 import Header from '../Header/Header'
-import Search from '../Search/Search'
 import { Route, Switch } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 
