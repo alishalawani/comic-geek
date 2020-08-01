@@ -1,4 +1,69 @@
-.marvel-image{
-    height:300px;
-    width: 250px;
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+.marvel-image {
+	height: 400px;
+	width: 350px;
+    box-shadow: 2px #ff0d40;
+	border-radius: 5px;
+}
+.main-marvel-container {
+    
+}
+.marvel-char-name {
+	font-family: 'Courgette', cursive;
+}
+
+.hr-marvel-display {
+	border: 1px solid #ff0d40;
+}
+
+.marvel-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.profile {
+   
+	flex: 1;
+	margin-right: 100px;
+	text-align: center;
+	align-items: center;
+}
+
+.info {
+     margin-top: 10px;
+    flex: 2;
+    font-family: sans-serif;
+}
+ul{
+    list-style: none;
+}
+ .occupation, h3, .full-name, .bio{
+     font-weight: bold;
+ }
+
+ul li::before{
+    content: "\2022";
+    color: #ff0d40;
+    width: 1em;
+    margin-left: -1em;
+    display: inline-block;
+    font-weight: bold;
+}
+.name{
+    font-size: 20px;
+}
+
+@media (max-width: 700px) {
+	.marvel-container {
+		flex-direction: column;
+	}
+	.marvel-image {
+		height: 350px;
+		width: 300px;
+    }
+    .profile{
+        margin-right: 0;
+    }
 }
