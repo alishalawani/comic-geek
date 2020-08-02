@@ -1,13 +1,15 @@
 .marvel-link {
 	width: 100%;
-    height: 100%;
-    box-shadow: 7px 7px black;
+	height: 100%;
+	box-shadow: 7px 7px black;
 }
-
+.carousel-js {
+	text-align: center;
+}
 .dc-link {
 	width: 100%;
-    height: 100%;
-    box-shadow: 7px 7px black;
+	height: 100%;
+	box-shadow: 7px 7px black;
 }
 .marvel-link-container {
 	width: 45%;
@@ -33,26 +35,32 @@
 	text-align: center;
 	margin-bottom: 200px;
 }
-
-
+.home-image {
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+}
+.carousel-js{
+	
+}
 
 @media (max-width: 700px) {
 	.home-links {
 		flex-direction: column;
+		text-align: center;
 	}
 
 	.dc-link-container {
-		width: 300px;
-		height: 300px;
+		width: 280px;
+		height: 280px;
 		margin: 30px auto;
-		
+		margin-left: 0;
 	}
 
 	.marvel-link-container {
-		width: 300px;
-		height: 300px;
-        margin: 0 auto;
-       
-		
+		width: 280px;
+		height: 280px;
+		/* margin: 0 auto; */
+		margin-right: 0;
 	}
 }
