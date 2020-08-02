@@ -43,6 +43,7 @@ function Home(props) {
 								alt='marvel'
 							/>
 						</Link>
+						
 					</div>
 
 					<div className='dc-link-container'>
