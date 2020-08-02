@@ -1,3 +1,59 @@
-.home-img{
+
+.marvel-link{
+    width: 100%;
+    height: 100%;
+}
+
+.dc-link{
+width: 100%;
+    height: 100%;
+}
+.marvel-link-container{
+    width: 45%;
+    height: 45%;
+    flex: 1;
+    margin-right: 25px;
+}
+.dc-link-container{
+    width: 45%;
+    height: 45%;
+    flex: 1;
+    margin-left: 25px;
+    border: 1px solid black;
     
+}
+
+.home-links{
+    display: flex;
+    margin-top: 70px;
+    flex-direction: row;
+    
+
+}
+
+.home-container{
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+@media(max-width: 700px){
+    .home-links{
+        flex-direction: column;
+    }
+
+    .dc-link-container{
+
+        width: 300px;
+        height: 300px;
+        margin: 30px auto;
+
+    }
+
+    .marvel-link-container{
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        box-shadow: 2px black ;
+
+    }
 }

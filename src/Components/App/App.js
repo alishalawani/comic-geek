@@ -6,7 +6,7 @@ import Home from '../Home/Home';
 import MarvelDisplay from '../Marvel/MarvelDisplay'
 import DCDisplay from '../DC/DCDisplay'
 import Header from '../Header/Header'
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import About from '../About/About'
 
@@ -85,6 +85,7 @@ class App extends Component {
 							}}
 						/>
 						<Route path='/about' component={About}/>
+						<Redirect path='*' to='/'/>
 					</Switch>
 				</main>
 			</Container>
