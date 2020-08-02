@@ -30,7 +30,7 @@ function Home(props) {
 							fluid
 							className='home-image'
 							src='https://www.wallpaperup.com/uploads/wallpapers/2014/04/29/345381/815a44cc03df4b998281e5d7dd272d6b.jpg'
-							alt='Marvel'
+							alt='dc'
 						/>
 					</Carousel.Item>
 				</Carousel>
