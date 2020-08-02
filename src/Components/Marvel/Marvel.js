@@ -73,20 +73,22 @@ event.preventDefault();
     render() {
         let characters = this.props.characters.map((character, index)=>{
             return (
-							<Card className='character' key={index}>
+							<Card
+								className='character'
+								key={index}
+								>
 								<Card.Img
-                                // variant='top'
+									variant='top'
 									src={character.image.url}
 									alt={character.name}
 									className='marvel-char'
 								/>
 								<Card.Body>
 									<Card.Text>{character.name} </Card.Text>
-									
-										<Link to={`/marvel-characters/:${character.name}`}>
-											<button className='marvel-know-more'>Know More</button>
-										</Link>
-									
+
+									<Link to={`/marvel-characters/:${character.name}`}>
+										<button className='marvel-know-more'>Know More</button>
+									</Link>
 								</Card.Body>
 							</Card>
 						);
