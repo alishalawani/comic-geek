@@ -7,10 +7,13 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import axios from 'axios'
+import Toast from 'react-bootstrap/Toast'
 
 
 const apiKey = process.env.REACT_APP_MYAPI_KEY;
 let names = [];
+
+let error;
 class DC extends Component {
 
     
@@ -30,7 +33,39 @@ class DC extends Component {
 					}
 				})
 				.catch((err) => {
-					console.log("Handled error: " + err);
+					if (err.status === '404') {
+						error = (
+							<Toast>
+								<Toast.Header>
+									<img
+										src='holder.js/20x20?text=%20'
+										className='rounded mr-2'
+										alt=''
+									/>
+									<strong className='mr-auto'>Error</strong>
+								</Toast.Header>
+								<Toast.Body>Page not found.</Toast.Body>
+							</Toast>
+						);
+					} else {
+						error = (
+							<Toast>
+								<Toast.Header>
+									<img
+										src='holder.js/20x20?text=%20'
+										className='rounded mr-2'
+										alt=''
+									/>
+									<strong className='mr-auto'>Error</strong>
+								</Toast.Header>
+								<Toast.Body>
+									Hey, Comic Geek user, we are experiencing some temporary
+									problems on our app, this will be fixed in no time, sorry for
+									the inconvenience.
+								</Toast.Body>
+							</Toast>
+						);
+					}
 				});
 		});
 	}
@@ -61,6 +96,7 @@ class DC extends Component {
                 <hr className='hr'/>
 				<h1>DC Comics</h1>
 				<CardColumns>{characters}</CardColumns>
+				{error}
 			</Container>
 		);
 	}

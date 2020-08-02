@@ -7,10 +7,12 @@ import axios from 'axios';
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns'
+import Toast from 'react-bootstrap/Toast'
 
 
 const apiKey = process.env.REACT_APP_MYAPI_KEY;
 let names = [];
+let error;
 class Marvel extends Component {
 
 
@@ -18,15 +20,49 @@ class Marvel extends Component {
         const url = `https://www.superheroapi.com/api.php/${apiKey}/search/`;
         marvelNames.forEach((name)=>{
             axios(url+name).then((res)=>{return res.data.results[0]}).then((res)=>{
-                // console.log(res)
-                //to make sure that the results don't double
+              
                 if(!names.includes(res.name)){
                     names.push(res.name);
                     this.props.setMarvelData(res);
                 }
                 
                 
-            }).catch((err)=>{console.log("Handled error: "+err)})
+            }).catch((err)=>{
+                if(err.status === '404'){
+                    error = (
+											<Toast>
+												<Toast.Header>
+													<img
+														src='holder.js/20x20?text=%20'
+														className='rounded mr-2'
+														alt=''
+													/>
+													<strong className='mr-auto'>Error</strong>
+													
+												</Toast.Header>
+												<Toast.Body>
+													Page not found.
+												</Toast.Body>
+											</Toast>
+										);
+                }else{
+                    error = (
+											<Toast>
+												<Toast.Header>
+													<img
+														src='holder.js/20x20?text=%20'
+														className='rounded mr-2'
+														alt=''
+													/>
+													<strong className='mr-auto'>Error</strong>
+												</Toast.Header>
+												<Toast.Body>
+													Hey, Comic Geek user, we are experiencing some temporary problems on our app, this will be fixed in no time, sorry for the inconvenience.
+												</Toast.Body>
+											</Toast>
+										);
+                }
+            })
         })
     
     }
@@ -62,6 +98,7 @@ event.preventDefault();
                         <hr className='hr'/>
 						<h1>Marvel Comics</h1>
 						<CardColumns >{characters}</CardColumns>
+                        {error}
 					</Container>
 				);
     }
