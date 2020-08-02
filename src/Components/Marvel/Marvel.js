@@ -75,7 +75,7 @@ event.preventDefault();
             return (
 							<Card className='character' key={index}>
 								<Card.Img
-                                variant='top'
+                                // variant='top'
 									src={character.image.url}
 									alt={character.name}
 									className='marvel-char'
