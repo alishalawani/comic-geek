@@ -57,7 +57,7 @@ class Marvel extends Component {
 													<strong className='mr-auto'>Error</strong>
 												</Toast.Header>
 												<Toast.Body>
-													Hey, Comic Geek user, we are experiencing some temporary problems on our app, this will be fixed in no time, sorry for the inconvenience.
+													Hey, Comic Geek user, this image is currently unavailable, this will be fixed in no time, sorry for the inconvenience.
 												</Toast.Body>
 											</Toast>
 										);
