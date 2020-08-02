@@ -3,7 +3,7 @@ import './Home.css'
 import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
 
-import { CardColumns, Card, Row, Col } from 'react-bootstrap';
+import {Row, Col } from 'react-bootstrap';
 
 function Home(props) {
     return (

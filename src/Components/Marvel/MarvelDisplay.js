@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import './MarvelDisplay.css';
-import { Container, Row, Col, Card, Image } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 class MarvelDisplay extends Component {
 	render() {
 		let characterInfo;
 		this.props.characters.forEach((character) => {
-			// console.log("param name-" + this.props.match.params.name);
-			// console.log("character name -" + character1.name);
 			if (`:${character.name}` === this.props.match.params.name) {
 				characterInfo = (
 					<div className='marvel-container'>
