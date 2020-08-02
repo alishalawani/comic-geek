@@ -15,6 +15,7 @@ class Search extends Component {
 
 	handleInputChange = (event) => {
 		this.setState({ search: event.target.value, submitted: false });
+		found = false;
 	};
 
 	handleSubmit = (event) => {
@@ -57,6 +58,8 @@ class Search extends Component {
 			});
 		}
 
+	
+
 		return (
 			<div>
 				<Form onSubmit={this.handleSubmit}>
@@ -78,12 +81,13 @@ class Search extends Component {
                         </Col>
 					</Row>
 				</Form>
-				{(this.state.search && this.state.submitted) && <h2>Your Search result:</h2>}
+				{(found && this.state.search && this.state.submitted) && <h2>Your Search result:</h2>}
 				{((found === false) && this.state.submitted && this.state.search)&& (
 					<p className='search-error'>
 						Sorry, the character you are searched for isn't available, check if
 						you typed the name correctly or try searching for a different
 						character{' '}
+						
 					</p>
 				)}
 				<CardColumns>{characterDisplay}</CardColumns>

@@ -1,4 +1,6 @@
-.btn{
-    background-color: #ff0d40;
-    color: white;
+
+.search-error{
+    background-color: rgb(247, 161, 139, 0.2);
+    padding: 5px;
+    border-radius: 5px;
 }

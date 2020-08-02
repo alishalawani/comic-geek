@@ -83,7 +83,7 @@ class DC extends Component {
 						<Card.Text>{character.name} </Card.Text>
 
 						<Link to={`/dc-characters/:${character.name}`}>
-							<div className='dc-know-more'>Know More</div>
+							<button className='dc-know-more'>Know More</button>
 						</Link>
 					</Card.Body>
 				</Card>
