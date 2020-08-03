@@ -1,5 +1,23 @@
 const marvelNames = [
-     "Spider-Man", "Iron Man", "Black Panther", "Jessica Jone", "Captain America", "Wolverine", "Luke Cage", "Captain Marvel", "Black Widow", "Hulk", "Thanos", "Blob"
-]
+	'Spider-Man',
+	'Doctor Strange',
+	'Iron Man',
+	'Black Panther',
+	'Mister Fantastic',
+	'Jessica Jone',
+	'Captain America',
+	'Wolverine',
+	'Luke Cage',
+	'Punisher',
+	'Captain Marvel',
+	'Black Widow',
+	'Hulk',
+	'Thanos',
+	'Blob',
+	'Vision',
+	'Nick Fury',
+	'Jean Grey',
+	'Doctor Doom',
+];
 
 export default marvelNames;
