@@ -9,6 +9,7 @@ import Header from '../Header/Header'
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import About from '../About/About'
+import Footer from '../Footer/Footer'
 
 class App extends Component {
 	constructor(props) {
@@ -88,6 +89,7 @@ class App extends Component {
 						<Redirect path='*' to='/'/>
 					</Switch>
 				</main>
+				<Footer/>
 			</Container>
 		);
 	}

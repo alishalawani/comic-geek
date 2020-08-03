@@ -15,8 +15,7 @@ function About(props) {
 			</div>
 			<p className='about-paragraph'>
 				Comic Greek is an app where both Marvel and DC comic fans can find fun
-				information about different but limited comic characters in both worlds,
-				and hopefully this promotes diversity.
+				information about different but limited comic characters in both worlds. Hopefully this promotes diversity.
 			</p>
 		</Jumbotron>
 	);
