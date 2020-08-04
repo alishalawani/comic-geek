@@ -9,7 +9,6 @@ const marvelNames = [
 	'Wolverine',
 	'Luke Cage',
 	'Punisher',
-	'Captain Marvel',
 	'Black Widow',
 	'Hulk',
 	'Thanos',
