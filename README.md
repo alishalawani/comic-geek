@@ -52,7 +52,7 @@ I used the [Superhero Api](https://superheroapi.com/) for my app, to use the [Su
 ### How to Install Comic Geek
 
 - Fork and Clone this repository
-- In the repository, run npm install
+- In the directory, run npm install
 
 ### Contributions
 
