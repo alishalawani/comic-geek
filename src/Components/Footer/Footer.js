@@ -1,12 +1,10 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import './Footer.css'
 function Footer(props) {
     return (
-			<Container className='footer-container' style={{ margin: '0 0 7px 0' }}>
 				<footer className='footer'>
-					<div>
+					<div className='top-line'>
 						{' '}
 						<span>
 							&copy; 2020{' '}
@@ -21,14 +19,13 @@ function Footer(props) {
 							/>
 						</span>
 					</div>
-					<div>
+					<div >
 						<span>Powered by </span>
 						<Link to='/' className='comic-geek'>
 							Comic Geek
 						</Link>
 					</div>
 				</footer>
-			</Container>
 		);
 }
 

@@ -4,15 +4,17 @@
 	margin-bottom: 7px;
 }
 
-.footer-container {
-    margin-bottom: 20px;
-    border-top: 1px solid grey;
-}
 
 .footer{
     margin-top: 10px;
+    margin-bottom: 20px;
+    border-top: 1px solid grey;
 }
 .comic-geek{
     font-weight: bold;
     color: #ff0d40;
+}
+
+.top-line{
+    margin-top: 7px;
 }
