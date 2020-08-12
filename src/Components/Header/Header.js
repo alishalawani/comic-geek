@@ -11,7 +11,6 @@ function Header(props) {
 				variant='light'
 				expand='md'>
 				<LinkContainer to='/'>
-					
 					<Navbar.Brand ><h1 className='logo'>Comic Geek</h1></Navbar.Brand>
 				</LinkContainer>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />

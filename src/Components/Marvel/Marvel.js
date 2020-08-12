@@ -8,30 +8,27 @@ import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns'
 import Toast from 'react-bootstrap/Toast'
-
-
 const apiKey = process.env.REACT_APP_MYAPI_KEY;
+
+// Hou comment: we should keep these variables in Marvel's state
 let names = [];
 let error;
+
 class Marvel extends Component {
-
-
     componentDidMount(){
         const url = `https://www.superheroapi.com/api.php/${apiKey}/search/`;
         marvelNames.forEach((name)=>{
             axios(url+name).then((res)=>{return res.data.results[0]}).then((res)=>{
-              
                 if(!names.includes(res.name)){
                     names.push(res.name);
                     this.props.setMarvelData(res);
                 }
-                
-                
             }).catch((err)=>{
                 if(err.status === '404'){
                     error = (
 											<Toast>
 												<Toast.Header>
+													{/* Hou comment: it's considered an SEO best practice to include a non-empty alt string to describe your images */}
 													<img
 														src='holder.js/20x20?text=%20'
 														className='rounded mr-2'
@@ -68,10 +65,12 @@ class Marvel extends Component {
     }
 
     handleButtonEvent = (event) =>{
-event.preventDefault();
+			event.preventDefault();
     }
+
     render() {
         let characters = this.props.characters.map((character, index)=>{
+						// Hou comment: consider destructuring `character` here
             return (
 							<Card
 								className='character'
@@ -97,10 +96,10 @@ event.preventDefault();
         return (
 					<Container>
 						<Search characters={this.props.characters} />
-                        <hr className='hr'/>
+						<hr className='hr'/>
 						<h1>Marvel Comics</h1>
 						<CardColumns >{characters}</CardColumns>
-                        {error}
+            {error}
 					</Container>
 				);
     }

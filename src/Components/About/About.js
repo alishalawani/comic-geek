@@ -1,7 +1,7 @@
 import React from 'react';
 import { Jumbotron, Image } from 'react-bootstrap';
 import './About.css';
-function About(props) {
+function About() {
 	return (
 		<Jumbotron>
 			<h1 className='about-heading'>About Comic Geek</h1>

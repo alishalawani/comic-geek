@@ -12,8 +12,10 @@ import About from '../About/About'
 import Footer from '../Footer/Footer'
 
 class App extends Component {
-	constructor(props) {
-		super(props);
+	// Hou comment: No need to pass props into your constructor() and super() since
+	// you're not accessing this.props inside the constructor()
+	constructor() {
+		super();
 		this.state = {
 			marvelCharacters: [],
       dcCharacters: [],
@@ -23,18 +25,30 @@ class App extends Component {
 
 	setMarvelData = (character) => {
 		this.setState({
+			// Hou comment: great job with using spread operator to create a shallow copy of state!
 			marvelCharacters: [...this.state.marvelCharacters, character]
 		});
 	};
 	setDCData = (character) => {
 		this.setState({
+			// Hou comment: great job with using spread operator to create a shallow copy of state!
 			dcCharacters: [...this.state.dcCharacters, character],
 		
 		});
   };
   
 	render() {
-    
+		// Hou comment: you could use destructuring to extract your state into variables at the top of the function, so you don't have to access them repeatedly in this.state
+		// const {
+		// 	marvelCharacters,
+		// 	dcCharacters
+		// } = this.state;
+		// Then you could do:
+		// <Marvel
+		//   setMarvelData={this.setMarvelData}
+		//   characters={marvelCharacters}
+		// />
+		// As a follow-up challenge, consider refactoring all your components to use this destructuring pattern.
 		return (
 			<Container>
 				<Header />

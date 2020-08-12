@@ -1,3 +1,8 @@
+/* Hou comment: Consider using class selectors instead of tag selectors for styling purposes. Here's why: https://frontstuff.io/you-need-to-stop-targeting-tags-in-css. For your next project, consider using CSS modules to style your components as well to prevent clashes. Here's how: https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
+*/
+
+/* Hou comment: If you're interested in learning to use the popular Block-Element-Modifier pattern for organizing and naming your CSS code, here's a 20 minute guide: https://www.smashingmagazine.com/2018/06/bem-for-beginners/ */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

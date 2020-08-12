@@ -1,3 +1,5 @@
+// Hou comment: Consider deleting any files that are not being used for your project, like this one and App.test.js, that came by default with the create-react-app framework
+
 // This optional code is used to register a service worker.
 // register() is not called by default.
 

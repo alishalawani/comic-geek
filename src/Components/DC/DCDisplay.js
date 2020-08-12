@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import './DCDisplay.css';
 import { Container } from 'react-bootstrap';
+
+// Hou comment: As a follow-up challenge, how would you refactor DCDisplay to use a functional component + Hooks? In general, how would you refactor your class components that don't rely state to use functional components?
 class DCDisplay extends Component {
 	render() {
 		let characterInfo;
 		this.props.characters.forEach((character) => {
+				// Hou comment: you could destructure `character` here
+				// const {
+				// 	name,
+				// 	image,
+				// 	appearance,
+				// 	powerstats,
+				// 	work,
+				// } = character;
 			if (`:${character.name}` === this.props.match.params.name) {
 				characterInfo = (
 					<div className='dc-container'>
