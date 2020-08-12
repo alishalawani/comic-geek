@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './MarvelDisplay.css';
 import { Container} from 'react-bootstrap';
+
+// Hou comment: can we use a functional component instead of a class component here?
 class MarvelDisplay extends Component {
 	render() {
 		let characterInfo;
@@ -10,7 +12,6 @@ class MarvelDisplay extends Component {
 					<div className='marvel-container'>
 						<div className='profile'>
 							<h1 className='marvel-char-name'>{character.name}</h1>
-
 							<img
 								src={character.image.url}
 								alt={character.name}

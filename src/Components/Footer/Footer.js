@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import './Footer.css'
+
+// Hou comment: nice job using a functional component here! Footer is a great candidate for the functional component pattern because it does not rely on state.
 function Footer(props) {
     return (
 				<footer className='footer'>

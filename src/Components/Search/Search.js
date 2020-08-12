@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
+// Hou comment: I'm noticing that semi-colons are used in some places and not in others. Try to pick a convention and stick with it throughout your codebase.
 import CardColumns from 'react-bootstrap/CardColumns'
 import SearchDisplay from './SearchDisplay'
+// Hou comment: Nice job using react-bootstrap in your project! Your design looks really elegant thanks to it.
 import { Form, Row, Col, Button } from 'react-bootstrap';
 import './Search.css'
+// Hou comment: you can store `found` variable in the Search state 
 let found = false
 class Search extends Component {
+	// Hou comment: No need to pass props into your constructor() and super() since
+	// you're not accessing this.props inside the constructor()
 	constructor(props) {
 		super(props);
 		this.state = {
 			search: '',
-            submitted: false,
+      submitted: false,
 		};
 	}
 
@@ -20,14 +25,14 @@ class Search extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-        this.setState({ submitted: true });
-        
+    this.setState({ submitted: true });
 	};
 
 	render() {
-        let characterDisplay;
-        let filteredCharacters 
-		if (this.state.submitted === true) {
+		// Hou comment: fix indentation issues below
+		let characterDisplay;
+		let filteredCharacters; 
+		if (this.state.submitted) {
 			filteredCharacters = this.props.characters.filter((character) => {
 				if (
 					character.name
@@ -39,9 +44,8 @@ class Search extends Component {
 				) {
                     found = true
                     
-				}else{
-                    
-                }
+				}
+
 				return (
 					character.name
 						.toLowerCase()
@@ -53,13 +57,11 @@ class Search extends Component {
 			});
 
 			characterDisplay = filteredCharacters.map((character, index) => {
-				
+				// Hou comment: could you break up line 60 into separate lines for better readability?
 				return  (character.biography.publisher === 'DC Comics') ? <SearchDisplay link={`/dc-characters/:${character.name}`} character={character}key={index}/> : <SearchDisplay link={`/marvel-characters/:${character.name}`} character={character} key={index}/>;
 			});
 		}
-
-	
-
+		// Hou comment: I'm noticing there's some code formatting issues below - make sure to indent your code properly for better readability!
 		return (
 			<div>
 				<Form onSubmit={this.handleSubmit}>
@@ -82,12 +84,11 @@ class Search extends Component {
 					</Row>
 				</Form>
 				{(found && this.state.search && this.state.submitted) && <h2>Your Search result:</h2>}
-				{((found === false) && this.state.submitted && this.state.search)&& (
+				{(!found && this.state.submitted && this.state.search)&& (
 					<p className='search-error'>
 						Sorry, the character you are searched for isn't available, check if
 						you typed the name correctly or try searching for a different
 						character{' '}
-						
 					</p>
 				)}
 				<CardColumns>{characterDisplay}</CardColumns>

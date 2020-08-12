@@ -14,9 +14,7 @@ const apiKey = process.env.REACT_APP_MYAPI_KEY;
 let names = [];
 
 let error;
-class DC extends Component {
-
-    
+class DC extends Component {    
 	componentDidMount() {
 		const url = `https://www.superheroapi.com/api.php/${apiKey}/search/`;
 		dcNames.forEach((name) => {
@@ -36,6 +34,7 @@ class DC extends Component {
 						error = (
 							<Toast>
 								<Toast.Header>
+									{/* Hou comment: it's considered an SEO best practice to include a non-empty alt string to describe your images */}
 									<img
 										src='holder.js/20x20?text=%20'
 										className='rounded mr-2'

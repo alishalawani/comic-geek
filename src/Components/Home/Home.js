@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 import { Carousel } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 
-function Home(props) {
+function Home() {
     return (
 			<Container className='home-container'>
 				<Carousel className='carousel-js'>
