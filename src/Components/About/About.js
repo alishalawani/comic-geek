@@ -1,7 +1,7 @@
 import React from 'react';
 import { Jumbotron, Image } from 'react-bootstrap';
 import './About.css';
-function About(props) {
+function About() {
 	return (
 		<Jumbotron>
 			<h1 className='about-heading'>About Comic Geek</h1>
@@ -15,7 +15,8 @@ function About(props) {
 			</div>
 			<p className='about-paragraph'>
 				Comic Greek is an app where both Marvel and DC comic fans can find fun
-				information about different but limited comic characters in both worlds. Hopefully this promotes diversity.
+				information about different but limited comic characters in both worlds.
+				Hopefully this promotes diversity.
 			</p>
 		</Jumbotron>
 	);

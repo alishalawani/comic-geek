@@ -4,15 +4,16 @@ import { Container } from 'react-bootstrap';
 function MarvelDisplay(props) {
 	let characterInfo;
 	this.props.characters.forEach((character) => {
+		const { name, image, appearance, powerstats, work, biography } = character;
 		if (`:${character.name}` === this.props.match.params.name) {
 			characterInfo = (
 				<div className='marvel-container'>
 					<div className='profile'>
-						<h1 className='marvel-char-name'>{character.name}</h1>
+						<h1 className='marvel-char-name'>{name}</h1>
 
 						<img
-							src={character.image.url}
-							alt={character.name}
+							src={image.url}
+							alt={name}
 							className='marvel-image'
 						/>
 					</div>
@@ -20,33 +21,33 @@ function MarvelDisplay(props) {
 						<h2 className='bio'>Biography</h2>
 						<p className='name'>
 							<span className='full-name'>Full Name:</span>{' '}
-							{character.biography['full-name']}
+							{biography['full-name']}
 						</p>
 						<h5 className='bio'>Alias(es)</h5>
 						<ul>
-							{character.biography.aliases.map((alias, index) => {
+							{biography.aliases.map((alias, index) => {
 								return <li key={index}>{alias}</li>;
 							})}
 						</ul>
 						<p>
 							<span className='bio'>Place of Birth:</span>{' '}
-							{character.biography['place-of-birth']}
+							{biography['place-of-birth']}
 						</p>
 						<p>
 							<span className='bio'>Alter Ego(s):</span>{' '}
-							{character.biography['alter-egos']}
+							{biography['alter-egos']}
 						</p>
 						<h3>Appearance:</h3>
-						<p>Height: {character.appearance.height[0]}</p>
-						<p>Gender: {character.appearance.gender}</p>
-						<p>Eye color: {character.appearance['eye-color']}</p>
-						<p>Hair Color: {character.appearance['hair-color']}</p>
+						<p>Height: {appearance.height[0]}</p>
+						<p>Gender: {appearance.gender}</p>
+						<p>Eye color: {appearance['eye-color']}</p>
+						<p>Hair Color: {appearance['hair-color']}</p>
 						<h3>Power Stats:</h3>
-						<p>Combat: {character.powerstats.combat}</p>
-						<p>Durability: {character.powerstats.durability}</p>
+						<p>Combat: {powerstats.combat}</p>
+						<p>Durability: {powerstats.durability}</p>
 						<p>
 							<span className='occupation'>Occupation:</span>{' '}
-							{character.work.occupation}
+							{work.occupation}
 						</p>
 					</div>
 				</div>

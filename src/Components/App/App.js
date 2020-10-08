@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Marvel from '../Marvel/Marvel';
 import DC from '../DC/DC';
 import Home from '../Home/Home';
@@ -12,8 +11,8 @@ import About from '../About/About';
 import Footer from '../Footer/Footer';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
 			marvelCharacters: [],
 			dcCharacters: [],
@@ -33,6 +32,7 @@ class App extends Component {
 	};
 
 	render() {
+		const { marvelCharacters, dcCharacters } = this.state;
 		return (
 			<Container>
 				<Header />
@@ -45,7 +45,7 @@ class App extends Component {
 								return (
 									<Marvel
 										setMarvelData={this.setMarvelData}
-										characters={this.state.marvelCharacters}
+										characters={marvelCharacters}
 									/>
 								);
 							}}
@@ -56,7 +56,7 @@ class App extends Component {
 								return (
 									<MarvelDisplay
 										match={routerProps.match}
-										characters={this.state.marvelCharacters}
+										characters={marvelCharacters}
 									/>
 								);
 							}}
@@ -65,10 +65,7 @@ class App extends Component {
 							path='/dc-comics'
 							render={() => {
 								return (
-									<DC
-										setDCData={this.setDCData}
-										characters={this.state.dcCharacters}
-									/>
+									<DC setDCData={this.setDCData} characters={dcCharacters} />
 								);
 							}}
 						/>
@@ -78,7 +75,7 @@ class App extends Component {
 								return (
 									<DCDisplay
 										match={routerProps.match}
-										characters={this.state.dcCharacters}
+										characters={dcCharacters}
 									/>
 								);
 							}}

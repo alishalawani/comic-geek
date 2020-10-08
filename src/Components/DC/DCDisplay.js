@@ -5,49 +5,53 @@ class DCDisplay extends Component {
 	render() {
 		let characterInfo;
 		this.props.characters.forEach((character) => {
-			if (`:${character.name}` === this.props.match.params.name) {
+			const {
+				name,
+				image,
+				appearance,
+				powerstats,
+				work,
+				biography,
+			} = character;
+			if (`:${name}` === this.props.match.params.name) {
 				characterInfo = (
 					<div className='dc-container'>
 						<div className='dc-profile'>
-							<h1 className='dc-char-name'>{character.name}</h1>
+							<h1 className='dc-char-name'>{name}</h1>
 
-							<img
-								src={character.image.url}
-								alt={character.name}
-								className='dc-image'
-							/>
+							<img src={image.url} alt={name} className='dc-image' />
 						</div>
 						<div className='dc-info'>
 							<h2 className='dc-bio'>Biography</h2>
 							<p className='dc-name'>
 								<span className='dc-full-name'>Full Name:</span>{' '}
-								{character.biography['full-name']}
+								{biography['full-name']}
 							</p>
 							<h5 className='dc-bio'>Alias(es)</h5>
 							<ul>
-								{character.biography.aliases.map((alias, index) => {
+								{biography.aliases.map((alias, index) => {
 									return <li key={index}>{alias}</li>;
 								})}
 							</ul>
 							<p>
 								<span className='dc-bio'>Place of Birth:</span>{' '}
-								{character.biography['place-of-birth']}
+								{biography['place-of-birth']}
 							</p>
 							<p>
 								<span className='dc-bio'>Alter Ego(s):</span>{' '}
-								{character.biography['alter-egos']}
+								{biography['alter-egos']}
 							</p>
 							<h3>Appearance:</h3>
-							<p>Height: {character.appearance.height[0]}</p>
-							<p>Gender: {character.appearance.gender}</p>
-							<p>Eye color: {character.appearance['dc-eye-color']}</p>
-							<p>Hair Color: {character.appearance['dc-hair-color']}</p>
+							<p>Height: {appearance.height[0]}</p>
+							<p>Gender: {appearance.gender}</p>
+							<p>Eye color: {appearance['dc-eye-color']}</p>
+							<p>Hair Color: {appearance['dc-hair-color']}</p>
 							<h3>Power Stats:</h3>
-							<p>Combat: {character.powerstats.combat}</p>
-							<p>Durability: {character.powerstats.durability}</p>
+							<p>Combat: {powerstats.combat}</p>
+							<p>Durability: {powerstats.durability}</p>
 							<p>
 								<span className='dc-occupation'>Occupation:</span>{' '}
-								{character.work.occupation}
+								{work.occupation}
 							</p>
 						</div>
 					</div>

@@ -12,13 +12,13 @@ import Toast from 'react-bootstrap/Toast';
 const apiKey = process.env.REACT_APP_MYAPI_KEY;
 
 class Marvel extends Component {
-	constructor(){
+	constructor() {
 		super();
 		this.state = {
 			names: [],
-			error: ''
-		}
-	};
+			error: '',
+		};
+	}
 	componentDidMount() {
 		const url = `https://www.superheroapi.com/api.php/${apiKey}/search/`;
 		marvelNames.forEach((name) => {
@@ -28,7 +28,10 @@ class Marvel extends Component {
 				})
 				.then((res) => {
 					if (!this.state.names.includes(res.name)) {
-						this.setState({names: [...this.state.names,res.name], error : this.state.error})
+						this.setState({
+							names: [...this.state.names, res.name],
+							error: this.state.error,
+						});
 						this.props.setMarvelData(res);
 					}
 				})
@@ -51,22 +54,25 @@ class Marvel extends Component {
 							names: this.state.names,
 						});
 					} else {
-						this.setState({error :(
-							<Toast>
-								<Toast.Header>
-									<img
-										src='holder.js/20x20?text=%20'
-										className='rounded mr-2'
-										alt='invalid character'
-									/>
-									<strong className='mr-auto'>Error</strong>
-								</Toast.Header>
-								<Toast.Body>
-									Hey, Comic Geek user, this image is currently unavailable,
-									this will be fixed in no time, sorry for the inconvenience.
-								</Toast.Body>
-							</Toast>
-						), names: this.state.names})
+						this.setState({
+							error: (
+								<Toast>
+									<Toast.Header>
+										<img
+											src='holder.js/20x20?text=%20'
+											className='rounded mr-2'
+											alt='invalid character'
+										/>
+										<strong className='mr-auto'>Error</strong>
+									</Toast.Header>
+									<Toast.Body>
+										Hey, Comic Geek user, this image is currently unavailable,
+										this will be fixed in no time, sorry for the inconvenience.
+									</Toast.Body>
+								</Toast>
+							),
+							names: this.state.names,
+						});
 					}
 				});
 		});
