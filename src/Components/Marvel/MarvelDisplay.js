@@ -1,21 +1,17 @@
 import React from 'react';
 import './MarvelDisplay.css';
 import { Container } from 'react-bootstrap';
-function MarvelDisplay(props) {
+function MarvelDisplay({ match, characters }) {
 	let characterInfo;
-	this.props.characters.forEach((character) => {
+	characters.forEach((character) => {
 		const { name, image, appearance, powerstats, work, biography } = character;
-		if (`:${character.name}` === this.props.match.params.name) {
+		if (`:${character.name}` === match.params.name) {
 			characterInfo = (
 				<div className='marvel-container'>
 					<div className='profile'>
 						<h1 className='marvel-char-name'>{name}</h1>
 
-						<img
-							src={image.url}
-							alt={name}
-							className='marvel-image'
-						/>
+						<img src={image.url} alt={name} className='marvel-image' />
 					</div>
 					<div className='info'>
 						<h2 className='bio'>Biography</h2>
@@ -46,8 +42,7 @@ function MarvelDisplay(props) {
 						<p>Combat: {powerstats.combat}</p>
 						<p>Durability: {powerstats.durability}</p>
 						<p>
-							<span className='occupation'>Occupation:</span>{' '}
-							{work.occupation}
+							<span className='occupation'>Occupation:</span> {work.occupation}
 						</p>
 					</div>
 				</div>
