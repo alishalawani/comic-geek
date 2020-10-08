@@ -11,7 +11,7 @@ function Home(props) {
 				<Carousel className='carousel-js'>
 					<Carousel.Item className='carousel-js'>
 						<Image
-						fluid
+							fluid
 							className='home-image'
 							src='https://www.dccomics.com/sites/default/files/dc_GalleryComics_1920x1080_20180606__JL01_cover_600_CMYK_2_5b1871e5870257.07705170.jpg'
 							alt='dc'
@@ -19,20 +19,19 @@ function Home(props) {
 					</Carousel.Item>
 					<Carousel.Item className='carousel-js'>
 						<Image
-						fluid
+							fluid
 							className='home-image'
 							src='https://mashfeed.files.wordpress.com/2015/11/spider-man-marvel-logo.jpg'
 							alt='Marvel'
 						/>
 					</Carousel.Item>
-				
 				</Carousel>
 				<Container className='home-links'>
 					<div className='marvel-link-container'>
 						<Link to='/marvel-comics'>
 							<Image
 								className='marvel-link'
-								src='https://www.oyunbufem.com/image/cache/catalog/Oyunlar/PS4/marvel-s-spider-man-1000x1000.jpg'
+								src='https://user-images.githubusercontent.com/64725210/95506586-b3f60300-0975-11eb-96ed-46a803d79f50.jpg'
 								alt='marvel'
 							/>
 						</Link>
@@ -42,7 +41,7 @@ function Home(props) {
 						<Link to='/dc-comics'>
 							<Image
 								className='dc-link'
-								src='https://1870mag.com/wp-content/uploads/dc-comics-logo-2016.jpg'
+								src='https://user-images.githubusercontent.com/64725210/95506516-9cb71580-0975-11eb-9992-8d8eeb8839e6.jpg'
 								alt='dc'
 							/>
 						</Link>
