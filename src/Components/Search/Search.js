@@ -9,7 +9,7 @@ function Search({ characters }) {
 		search: '',
 		submitted: false,
 	});
-	let found = false
+	let found = false;
 	const handleInputChange = (event) => {
 		setProperties({
 			search: event.target.value,
@@ -37,7 +37,7 @@ function Search({ characters }) {
 				character.name.toLowerCase().charAt(0) ===
 					properties.search.toLowerCase().charAt(0)
 			) {
-				found = true
+				found = true;
 			}
 			return (
 				character.name
@@ -48,7 +48,7 @@ function Search({ characters }) {
 					properties.search.toLowerCase().charAt(0)
 			);
 		});
-		
+
 		characterDisplay = filteredCharacters.map((character, index) => {
 			return character.biography.publisher === 'DC Comics' ? (
 				<SearchDisplay
